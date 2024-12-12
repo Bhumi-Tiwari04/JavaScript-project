@@ -1,0 +1,148 @@
+/* General reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(45deg, #1D1F2B, #3A3F55); /* Deep gradient for moody background */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.panel {
+    background: rgba(255, 255, 255, 0.1);  /* Translucent panel */
+    padding: 40px 50px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Soft blur effect */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #B39DDB;  /* Soft lilac hue */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: slideInFromTop 1.5s ease-out;
+}
+
+.question {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #f4f4f4; /* Soft white */
+    opacity: 0.8;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px 20px; /* Space between columns and rows */
+    margin-bottom: 30px;
+    animation: fadeInOptions 1.2s ease-in-out;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    background: linear-gradient(145deg, #9C7EEB, #B39DDB);  /* Lilac gradient */
+    color: #fff;
+    padding: 25px 35px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(156, 126, 235, 0.2); /* Soft shadow effect */
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px; /* Fixed height for consistency */
+}
+
+label:hover {
+    background: linear-gradient(145deg, #B39DDB, #9C7EEB); /* Reversed gradient on hover */
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(156, 126, 235, 0.4);
+}
+
+input[type="radio"]:checked + label {
+    background: linear-gradient(145deg, #7C4DFF, #5E35B1);  /* Darker lilac for selected option */
+    border: 2px solid #5E35B1;
+    box-shadow: 0 8px 30px rgba(94, 53, 177, 0.3);
+}
+
+button {
+    background-color: #7C4DFF; /* Lilac button */
+    color: #fff;
+    font-size: 22px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 30px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #5E35B1; /* Darker lilac on hover */
+    transform: scale(1.05);
+}
+
+#score {
+    font-size: 28px;
+    font-weight: 700;
+    color: #B39DDB;
+    margin-top: 50px;
+    opacity: 0.8;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#score h3 {
+    font-size: 36px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+#score p {
+    font-size: 20px;
+    color: #B0BEC5; /* Soft light gray */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    0% { transform: translateY(-40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInOptions {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
